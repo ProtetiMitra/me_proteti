@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/me_proteti/static/css/main.dc8a79f1.css",
+    "main.js": "/me_proteti/static/js/main.31cdccbb.js",
+    "static/js/787.729255d5.chunk.js": "/me_proteti/static/js/787.729255d5.chunk.js",
+    "static/media/Proteti_cv.pdf": "/me_proteti/static/media/Proteti_cv.a62aee968ed62183b84e.pdf",
+    "static/media/image1.jpg": "/me_proteti/static/media/image1.1eb10e35aeea7a71ac58.jpg",
+    "static/media/image3.jpg": "/me_proteti/static/media/image3.33193a3dd6318105c5af.jpg",
+    "static/media/me.jpg": "/me_proteti/static/media/me.ffa08ce4058407fc7439.jpg",
+    "static/media/new pm.png": "/me_proteti/static/media/new pm.195bae4bd09dcb957fbe.png",
+    "index.html": "/me_proteti/index.html",
+    "main.dc8a79f1.css.map": "/me_proteti/static/css/main.dc8a79f1.css.map",
+    "main.31cdccbb.js.map": "/me_proteti/static/js/main.31cdccbb.js.map",
+    "787.729255d5.chunk.js.map": "/me_proteti/static/js/787.729255d5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc8a79f1.css",
+    "static/js/main.31cdccbb.js"
+  ]
+}
