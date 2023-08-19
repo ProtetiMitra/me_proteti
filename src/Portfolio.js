@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './style.css'; // Make sure to import your CSS file
+import React, { useState,useEffect } from 'react';
+import './style.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CV from '../src/images/Proteti_cv.pdf';
 import {
@@ -48,6 +48,25 @@ const Portfolio = () => {
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('skills');
   const [msgSent, setMsgSent] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('.scroll-section');
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop - window.innerHeight <= 0) {
+          section.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check on load
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   const toggleSideMenu = () => {
     setSideMenuOpen(!sideMenuOpen);
@@ -100,9 +119,8 @@ const Portfolio = () => {
       <div id="header">
         <div className="container">
           <nav>
-          <img src={require('./images/new pm.png')} alt="logome" 
-
-             height="300" width="500" className="logo" />
+          <img src={require('./images/new pm.png')} alt="logome" height="300" width="500" className="logo" />
+          <i className="fa-solid fa-bars" onClick={toggleSideMenu}></i>
             <ul id="sidemenu" className={sideMenuOpen ? 'open' : ''}>
               <li>
                 <a href="#header">Home</a>
@@ -114,7 +132,10 @@ const Portfolio = () => {
                 <a href="#skills">Skills</a>
               </li>
               <li>
-                <a href="#portfolio">Portfolio</a>
+                <a href="#portfolio">Projects</a>
+              </li>
+              <li>
+                <a href="#achievements">Achievements</a>
               </li>
               <li>
                 <a href="#contact">Contact</a>
@@ -124,19 +145,18 @@ const Portfolio = () => {
                 onClick={toggleSideMenu}
               ></i>
             </ul>
-            <i className="fa-solid fa-bars" onClick={toggleSideMenu}></i>
+          
           </nav>
           <div className="header-text">
             <p>Full Stack Developer</p>
-            <h1>
-              Hi!! Me <span> Proteti Mitra </span>
+            <h1>Hi! This is  Proteti Mitra
               <FontAwesomeIcon icon={faHeart} />
-              
             </h1>
           </div>
+
         </div>
       </div>
-      <div id="about">
+      <div id="about" className="scroll-section">
         <div className="container">
           <div className="row">
             <div className="about-col-1">
@@ -191,15 +211,8 @@ const Portfolio = () => {
               </div>
               <div className={`tab-contents ${activeTab === 'experience' ? 'active-tab' : ''}`} id="experience">
                 <ul>
-                <li><span>Internships</span><br/>Oracle Certified Java SE 8 programmer</li>
-
                   <li>
-                    <span>State level competition</span>
-                    <br />
-                    Top 10 in technical paper presentation
-                  </li>
-                  <li>
-                    <span>Internships</span>
+                    <span>Past Internships</span>
                     <br/>
                     Interns at Nagarro and Persistent Systems
                     </li>
@@ -224,7 +237,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      <div id="skills">
+      <div id="skills" className="scroll-section">
         <div className="container">
           <h1 className="subtitle">My Skills</h1>
           <div className="skills-list">
@@ -280,9 +293,9 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      <div id="portfolio">
+      <div id="portfolio" className="scroll-section">
         <div className="container">
-          <h1 className="subtitle">My Works</h1>
+          <h1 className="subtitle">My Projects</h1>
           <div className="work-list">
                 <div className="work">
                 <img src={require('./images/image1.jpg')} alt="Translator" />
@@ -364,11 +377,11 @@ const Portfolio = () => {
                             </div>
                         </div>
                         <div class="work">
-                        <img src={require('./images/qr code.png')} alt="Translator" />
+                        <img src={require('./images/Foodle.png')} alt="Translator" />
                             <div class="layer">
-                                <h3>QR Code Generator</h3>
-                                <p>This website is a qr code Generator</p>
-                                <a href="https://github.com/ProtetiMitra/qrCodeGenerator"><FontAwesomeIcon icon={faLink} /></a>
+                                <h3>Foodle</h3>
+                                <p>This is a fullstack food ordering and delivery app with access given to customers,owners and delivery person</p>
+                                <a href=""><FontAwesomeIcon icon={faLink} /></a>
                             </div>
                         </div>
                         
@@ -378,11 +391,51 @@ const Portfolio = () => {
           </a>
         </div>
       </div>
-      <div id="contact">
+
+
+      <div id="achievements" className="scroll-section">
+  <div className="container">
+    <h1 className="subtitle">My Achievements</h1>
+    <div class="gap"></div>
+    <div class='achievements-list'>
+      <div class="achievement">
+        <div class="horizontal-line right"></div>
+        <img src={require('./images/oracle.jpg')} alt="Oracle Certified Java Associate" />
+        <p>Proudly bearing the title of an Oracle Certified Java Associate SE 8 Programmer, I am equipped with the expertise to architect robust and efficient Java solutions.</p>
+      </div>
+      <div class="achievement">
+        <div class="horizontal-line left"></div>
+        <img src={require('./images/google_python.jpg')} alt="Google Certified Python Programmer" />
+        <p>Being recognized as a Google certified Python Programmer is a testament to my relentless pursuit of expertise, propelling me confidently forward in my journey to shape innovative Python-driven solutions.</p>
+      </div>
+    </div>
+    <div class='vertical-line'></div>
+    <div class='achievements-list'>
+      <div class="achievement">
+        <img src={require('./images/tpp.jpg')} alt="Top 10 State-Level Technical Paper Presentation" />
+        <div class="horizontal-line right"></div>
+        <p>Clinching a spot among the top 10 in a state-level technical paper presentation competition underscores my ability to articulate complex ideas, setting me apart as a skilled communicator in the realm of technology.</p>
+      </div>
+      <div class="achievement">
+        <img src={require('./images/oc.jpg')} alt="Student Organizing Committee" />
+        <div class="horizontal-line left"></div>
+        <p>Serving as a valued member of the student organizing committee for a state-level technical paper presentation competition, I played a crucial role in orchestrating a seamless event that celebrated innovation and knowledge-sharing.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="gap"></div>
+
+
+
+      <div id="contact" className="scroll-section">
         <div className="container">
+        <h1 className="subtitle">Contact Me</h1>
+        <div class="gap"></div>
           <div className="row">
           <div className="contact-left">
-              <h1 className="sub-title">Contact Me</h1>
               <p><FontAwesomeIcon icon={faEnvelopeOpen} /> proteti11aeccse@gmail.com</p>
               <p><FontAwesomeIcon icon={faPhone} /> 7477612348</p>
               <SocialLinks />
