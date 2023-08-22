@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/me_proteti/static/css/main.5fd85fda.css",
-    "main.js": "/me_proteti/static/js/main.c67babec.js",
+    "main.css": "/me_proteti/static/css/main.006bc4da.css",
+    "main.js": "/me_proteti/static/js/main.4ca88111.js",
     "static/js/787.729255d5.chunk.js": "/me_proteti/static/js/787.729255d5.chunk.js",
     "static/media/oc.jpg": "/me_proteti/static/media/oc.d5918d32a585a46c7547.jpg",
     "static/media/tpp.jpg": "/me_proteti/static/media/tpp.4337fac2bad08f882a30.jpg",
@@ -14,12 +14,12 @@
     "static/media/Foodle.png": "/me_proteti/static/media/Foodle.4c92886394e77d2849a6.png",
     "static/media/mylogo.png": "/me_proteti/static/media/mylogo.63c3c88ce2aa04440f59.png",
     "index.html": "/me_proteti/index.html",
-    "main.5fd85fda.css.map": "/me_proteti/static/css/main.5fd85fda.css.map",
-    "main.c67babec.js.map": "/me_proteti/static/js/main.c67babec.js.map",
+    "main.006bc4da.css.map": "/me_proteti/static/css/main.006bc4da.css.map",
+    "main.4ca88111.js.map": "/me_proteti/static/js/main.4ca88111.js.map",
     "787.729255d5.chunk.js.map": "/me_proteti/static/js/787.729255d5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5fd85fda.css",
-    "static/js/main.c67babec.js"
+    "static/css/main.006bc4da.css",
+    "static/js/main.4ca88111.js"
   ]
 }
