@@ -180,14 +180,14 @@ const Portfolio = () => {
 
           <div class="header-text">
 
-          <h1>Hi! This is  Proteti Mitra❣️
+          <h1>Hi! This is  Proteti Mitra
               {/* <FontAwesomeIcon icon={faHeart} /> */}
             </h1>
             <div class="gap-front"></div>
         <h5>
-          <span class="line">I'm a Full stack  Developer🖥️</span>
-          <span class="line">I'm also an UI/UX Designer✏️</span>
-          <span class="line">I'm an OCJA Programmer🎓</span>
+          <span class="line">I'm a Full stack  Developer</span>
+          <span class="line">I'm also an UI/UX Designer</span>
+          <span class="line">I'm an OCJA Programmer</span>
         </h5>
       </div>
 

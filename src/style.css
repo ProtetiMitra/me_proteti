@@ -1,3 +1,7 @@
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap');
 *{
     margin:0;
     padding: 0;
@@ -45,7 +49,7 @@ nav ul li a{
     text-decoration: none;
     font-size: 22px;
     position: relative;
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'Playfair Display', serif;
 }
 nav ul li a::after{
     content: '';
@@ -83,7 +87,7 @@ nav ul li a:hover::after{
       padding: 20px;
       background-color: #333;
       color: white;
-      font-family: 'Tilt Prism', cursive;
+      
     }
   
     .logo {
@@ -103,7 +107,7 @@ nav ul li a:hover::after{
       opacity: 0;
       transform: translateY(-10px);
       transition: opacity 0.3s, transform 0.3s;
-      font-family: 'Satisfy', cursive;
+      
     }
   
     ul.open {
@@ -127,15 +131,7 @@ nav ul li a:hover::after{
   }
   
   
-  .header-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 30px;
-    margin-top: 75px;
-  }
+
   
   .header-text {
     display: flex;
@@ -145,6 +141,7 @@ nav ul li a:hover::after{
     text-align: center;
     font-size: 30px;
     margin-top: 75px;
+    font-family: 'PT Serif', serif;
   }
   
   .header-text h1 {
@@ -244,7 +241,7 @@ nav ul li a:hover::after{
     font-size: 60px;
     font-weight: 600;
     color: #fff;
-    font-family: cursive;
+    font-family: 'PT Serif', serif;
 }  
 
 
@@ -273,7 +270,8 @@ nav ul li a:hover::after{
 .tab-titles{
     display: flex;
     margin: 20px 0 40px;
-    font-family: 'Caveat', cursive;
+    font-family: 'Playfair Display', serif;
+
 
 }
 .tab-links{
@@ -282,7 +280,8 @@ nav ul li a:hover::after{
     font-weight: 500;
     cursor: pointer;
     position: relative;
-    font-family: 'Satisfy', cursive;
+    font-family: 'Playfair Display', serif;
+
 }
 .tab-links::after{
     content: '';
@@ -301,12 +300,12 @@ nav ul li a:hover::after{
 .tab-contents ul li{
    list-style: none;
    margin: 10px 0;
-   font-family: 'Caveat', cursive;
+   font-family: 'EB Garamond', serif;
 }
 .tab-contents ul li span{
     color: #b54769;
     font-size: 14px;
-    font-family: 'Caveat', cursive;
+    font-family: 'EB Garamond', serif;
 }
 .tab-contents{
     display: none;
@@ -353,6 +352,7 @@ display: block;
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
+    font-family: 'EB Garamond', serif;
 }
 .skills-list div:hover{
     background: #ff004f;
@@ -400,12 +400,12 @@ display: block;
     text-align: center;
     font-size: 14px;
     transition: height 0.5s;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'EB Garamond', serif;
 } 
 .layer h3{
     font-weight: 500;
     margin-bottom: 20px;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'EB Garamond', serif;
 
 }
 .layer a{
@@ -487,7 +487,7 @@ display: block;
     background-color: white; 
     top: 50%;
     transform: translateY(-50%);
-    z-index: -1; /* Push the line behind the images */
+    z-index: -1; 
   }
   
   .left {
@@ -498,51 +498,44 @@ display: block;
     right: 0;
   }
   
-  /* Adjust the positioning for the vertical lines */
+  
   .vertical-line {
     position: absolute;
-    height: calc(90% - 40px); /* Adjust the height to match the lines */
-    width: 2px; /* Adjust the thickness of the line */
-    background-color: white; /* Set the color of the line */
-    top: 20%; /* Move the line down to touch the horizontal lines */
+    height: calc(90% - 40px); 
+    width: 2px; 
+    background-color: white; 
+    top: 20%; 
     left: 50%;
     transform: translateX(-50%);
   }
   
 
-/* 
-  .achievement p{
-    padding-left: 0px;
-    margin-left: 25px;
 
-    
-  } */
-/* Add hover effect to images */
 .achievement img {
     max-width: 400px;
     margin-bottom: 25px;
     margin-left: 25px;
     border-radius: 150px;
-    transition: transform 0.3s, box-shadow 0.3s; /* Add transitions for smooth effect */
+    transition: transform 0.3s, box-shadow 0.3s; 
   }
   
-  /* Apply hover effect to paragraph */
+  
   .achievement p {
-    background: linear-gradient(to bottom, #ff004f, #080808); /* Add gradient background */
+    background: linear-gradient(to bottom, #ff004f, #080808); 
     padding: 10px;
     border-radius: 10px;
-    overflow: hidden; /* Hide overflowing content */
-    max-height: 0; /* Initially hide the content */
-    opacity: 0; /* Initially hide the text */
-    transition: max-height 0.5s, opacity 0.3s, transform 0.5s; /* Add transitions for animation */
-    font-family: 'Caveat', cursive;
+    overflow: hidden; 
+    max-height: 0;
+    opacity: 0; 
+    transition: max-height 0.5s, opacity 0.3s, transform 0.5s; 
+    font-family: 'DM Serif Display', serif;
   }
   
   .achievement:hover p {
-    max-height: 300px; /* Expand the box on hovering */
-    opacity: 1; /* Show the text on hovering */
-    transform: translateY(60%); /* Move the box downward */
-    transition-delay: 0.3s; /* Delay the transition to match the falling effect */
+    max-height: 300px;
+    opacity: 1; 
+    transform: translateY(60%); 
+    transition-delay: 0.3s;
   }
   
   
