@@ -200,7 +200,7 @@ const Portfolio = () => {
         <div className="container">
           <div className="row">
             <div className="about-col-1">
-            <img src={require('./images/me.jpg')} alt="Translator" />
+            <img src={require('./images/mee.jpg')} alt="Translator" />
 
             </div>
             <div className="about-col-2">
