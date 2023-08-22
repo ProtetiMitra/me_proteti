@@ -8,7 +8,7 @@
     scroll-behavior: smooth;
 }
 body{
-    background:#080808;
+    background:#000000;
     color: rgb(238, 230, 230);
 }
 #header{ 
@@ -45,6 +45,7 @@ nav ul li a{
     text-decoration: none;
     font-size: 22px;
     position: relative;
+    font-family: 'Abril Fatface', cursive;
 }
 nav ul li a::after{
     content: '';
@@ -72,7 +73,6 @@ nav ul li a:hover::after{
 
 
 
-/* ... Existing CSS styles ... */
 
 /* Media query for small screens */
 @media (max-width: 768px) {
@@ -83,6 +83,7 @@ nav ul li a:hover::after{
       padding: 20px;
       background-color: #333;
       color: white;
+      font-family: 'Tilt Prism', cursive;
     }
   
     .logo {
@@ -102,6 +103,7 @@ nav ul li a:hover::after{
       opacity: 0;
       transform: translateY(-10px);
       transition: opacity 0.3s, transform 0.3s;
+      font-family: 'Satisfy', cursive;
     }
   
     ul.open {
@@ -125,40 +127,15 @@ nav ul li a:hover::after{
   }
   
   
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.header-text {
-    margin-top: 10%;
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     font-size: 30px;
-    display: h;
+    margin-top: 75px;
   }
-  
-  
   
   .header-text {
     display: flex;
@@ -167,38 +144,102 @@ nav ul li a:hover::after{
     align-items: center;
     text-align: center;
     font-size: 30px;
+    margin-top: 75px;
   }
   
   .header-text h1 {
     align-items: center;
-    font-size: 60px;
-    width: 20rem;
+    font-size: 45px;
+    width: 50rem;
     color: #ff004f;
     margin: 0px;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 4s steps(22, end) forwards, blink 1s infinite;
+    position: relative;
   }
+
+  .header-text h5 {
+    align-items: center;
+    font-size: 25px;
+    width: 50rem;
+    color: #f5eff1;
+    margin: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    padding-top: 100px;
+  }
+  
+  .header-text h5::after {
+    content: ""; 
+    margin-left: 5px; 
+   }
   
   @keyframes typing {
     0% {
-      width: 0%;
+      width: 0;
     }
     100% {
       width: 100%;
     }
   }
   
-  @keyframes blink {
-    0%,
-    100% {
-      border-right: 2px solid transparent;
+  @keyframes lineAppear {
+    0% {
+      width: 0;
+      opacity: 1;
     }
-    50% {
-      border-right: 2px solid #222;
+    100% {
+      width: 100%;
+      opacity: 1;
     }
   }
   
+  @keyframes lineWait {
+    0%, 100% {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes lineDisappear {
+    0% {
+      width: 100%;
+      opacity: 1;
+    }
+    100% {
+      width: 0;
+      opacity: 1;
+    }
+  }
+  
+  .header-text .line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .header-text .line:nth-child(1) {
+    animation: lineAppear 2s linear forwards, lineWait 0.5s linear forwards 3s, lineDisappear 3s linear forwards 7s;
+  }
+  
+  .header-text .line:nth-child(2) {
+    animation: lineAppear 2s linear forwards 10s, lineWait 0.5s linear forwards 15s, lineDisappear 3s linear forwards 17s;
+  }
+
+  .header-text .line:nth-child(3) {
+    animation: lineAppear 2s linear forwards 20s, lineWait 0.5s linear forwards 25s;
+  }
+  
+  
+
+
+
+
   .subtitle{
     font-size: 60px;
     font-weight: 600;
@@ -232,6 +273,7 @@ nav ul li a:hover::after{
 .tab-titles{
     display: flex;
     margin: 20px 0 40px;
+    font-family: 'Caveat', cursive;
 
 }
 .tab-links{
@@ -240,6 +282,7 @@ nav ul li a:hover::after{
     font-weight: 500;
     cursor: pointer;
     position: relative;
+    font-family: 'Satisfy', cursive;
 }
 .tab-links::after{
     content: '';
@@ -258,16 +301,19 @@ nav ul li a:hover::after{
 .tab-contents ul li{
    list-style: none;
    margin: 10px 0;
+   font-family: 'Caveat', cursive;
 }
 .tab-contents ul li span{
     color: #b54769;
     font-size: 14px;
+    font-family: 'Caveat', cursive;
 }
 .tab-contents{
     display: none;
 }
 .tab-contents.active-tab{
 display: block;
+
 }
 
 /* -- ..................................Projects.................................  */
@@ -299,6 +345,7 @@ display: block;
     font-size: 30px;
     font-weight: 20;
     margin-bottom: 15px;
+
 }
 .skills-list div a{
     text-decoration: none;
@@ -353,10 +400,12 @@ display: block;
     text-align: center;
     font-size: 14px;
     transition: height 0.5s;
+    font-family: 'Oswald', sans-serif;
 } 
 .layer h3{
     font-weight: 500;
     margin-bottom: 20px;
+    font-family: 'Oswald', sans-serif;
 
 }
 .layer a{
@@ -486,6 +535,7 @@ display: block;
     max-height: 0; /* Initially hide the content */
     opacity: 0; /* Initially hide the text */
     transition: max-height 0.5s, opacity 0.3s, transform 0.5s; /* Add transitions for animation */
+    font-family: 'Caveat', cursive;
   }
   
   .achievement:hover p {

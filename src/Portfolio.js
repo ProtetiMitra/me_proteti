@@ -48,6 +48,8 @@ const Portfolio = () => {
   const [sideMenuOpen, setSideMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('skills');
   const [msgSent, setMsgSent] = useState(false);
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwDhyxTJcER8uwL4dCnc2CKAOoYNU2Q8b9pjLlIZQvr-Rumd_T5IoHDAd-pY9vwihKmeA/exec';
+  const [msg, setMsg] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,25 +78,53 @@ const Portfolio = () => {
     setActiveTab(tabName);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const formData = new FormData(form);
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   const form = event.target;
+  //   const formData = new FormData(form);
 
   
+  //   try {
+  //     const response = await fetch(
+  //       'https://script.google.com/macros/s/AKfycbwDhyxTJcER8uwL4dCnc2CKAOoYNU2Q8b9pjLlIZQvr-Rumd_T5IoHDAd-pY9vwihKmeA/exec',
+  //       {
+  //         method: 'POST',
+  //         body: formData,
+  //       }
+  //     );
+
+  //     if (response.ok) {
+  //       setMsgSent(true);
+  //       setTimeout(() => {
+  //         setMsgSent(false);
+  //       }, 5000);
+  //       form.reset();
+  //     } else {
+  //       console.error('Error sending message.');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error sending message:', error.message);
+  //   }
+  // };
+
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
     try {
-      const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbwDhyxTJcER8uwL4dCnc2CKAOoYNU2Q8b9pjLlIZQvr-Rumd_T5IoHDAd-pY9vwihKmeA/exec',
-        {
-          method: 'POST',
-          body: formData,
-        }
-      );
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        body: formData
+      });
 
       if (response.ok) {
-        setMsgSent(true);
+        setMsg('Message Sent successfully');
         setTimeout(() => {
-          setMsgSent(false);
+          setMsg('');
+          window.location.reload(); // Reload the page after showing the success message
         }, 5000);
         form.reset();
       } else {
@@ -104,7 +134,6 @@ const Portfolio = () => {
       console.error('Error sending message:', error.message);
     }
   };
-
   
   const handleDownload = () => {
     const link = document.createElement('a');
@@ -119,7 +148,7 @@ const Portfolio = () => {
       <div id="header">
         <div className="container">
           <nav>
-          <img src={require('./images/new pm.png')} alt="logome" height="300" width="500" className="logo" />
+          <img src={require('./images/mylogo.png')} alt="logome" height="200" width="200" className="logo" />
           <i className="fa-solid fa-bars" onClick={toggleSideMenu}></i>
             <ul id="sidemenu" className={sideMenuOpen ? 'open' : ''}>
               <li>
@@ -147,13 +176,24 @@ const Portfolio = () => {
             </ul>
           
           </nav>
-          <div className="header-text">
-            <p>Full Stack Developer</p>
-            <h1>Hi! This is  Proteti Mitra
-              <FontAwesomeIcon icon={faHeart} />
-            </h1>
-          </div>
 
+
+          <div class="header-text">
+
+          <h1>Hi! This is  Proteti Mitra❣️
+              {/* <FontAwesomeIcon icon={faHeart} /> */}
+            </h1>
+            <div class="gap-front"></div>
+        <h5>
+          <span class="line">I'm a Full stack  Developer🖥️</span>
+          <span class="line">I'm also an UI/UX Designer✏️</span>
+          <span class="line">I'm an OCJA Programmer🎓</span>
+        </h5>
+      </div>
+
+
+
+        
         </div>
       </div>
       <div id="about" className="scroll-section">
@@ -165,9 +205,9 @@ const Portfolio = () => {
             </div>
             <div className="about-col-2">
               <h1 className="subtitle">About Me</h1>
-              <p>
+              {/* <p>
               Computer Science grad skilled in Java and Python, passionate about web development. Tutor with 350+ classes, adept in full stack projects using Java, Spring Boot, React.js, and more. Enthusiastic about open-source, shaping the tech future through collaboration.e.
-              </p>
+              </p> */}
               <div className="tab-titles">
                 <p
                   className={`tab-links ${activeTab === 'skills' ? 'active-link' : ''}`}
@@ -475,7 +515,7 @@ const Portfolio = () => {
           </div>
           <div className="copyright">
             <p>
-              Copyright @Proteti Mitra 2023{' '}
+              Copyright @PM 2023{' '}
               <FontAwesomeIcon icon={faHeart} />
             </p>
           </div>
